@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="Css/materialize.min.css">
+  <script src="Js/jquery-3.7.0.min.js"></script>
+  <title>Registro de usuarios</title>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper card panel purple darken-3">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="registro.html">Registro</a></li>
+        <li><a href="pedidos.html">Pedidos</a></li>
+        <li><a href="localizacion.html">Localizacion</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="registro.html"><i class="material-icons purple-text">account_circle</i>Registro</a></li>
+    <li><a href="pedidos.html"><i class="material-icons purple-text">shopping_cart</i>Pedidos</a></li>
+    <li><a href="localizacion.html"><i class="material-icons purple-text">place</i>Localizacion</a></li>
+  </ul>
+
+  <div class="container">
+
+
+    <h3 class="text center-align purple-text" id="form">¡Registrese Aqui!</h3>
+    <p class="text center-align">Para conocer y seguir la entrega de sus productos debera estar registrado en el sistema
+    </p>
+
+    <div class="container">
+      <div class="card">
+        <div class="card-content">
+
+          <!-- Pestañas -->
+          <div class="row center">
+          <ul class="tabs purple-text">
+            <li class="tab col s6"><a href="#registro" class="purple-text ">Registro</a></li>
+            <li class="tab col s6"><a href="#login" class="purple-text">Iniciar Sesion</a></li>
+          </ul>
+        </div>
+
+          <!-- Formulario de Registro -->
+          <div id="registro">
+            <form>
+              <div class="input-field">
+                <i class="material-icons prefix purple-text">person</i>
+                <input id="Nombres" type="text" class="validate">
+                <label for="Nombres">Nombres</label>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix purple-text">person</i>
+                <input id="Apellidos" type="text" class="validate">
+                <label for="Apellidos">Apellidos</label>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix purple-text"> mail</i>
+                <input id="registro_email" type="email" class="validate">
+                <label for="registro_email">Email</label>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix purple-text">place</i>
+                <input id="Direccion" type="text" class="validate">
+                <label for="Direccion">Direccion</label>
+              </div>
+              <div class="input-field">
+                <i class="material-icons prefix purple-text">phone</i>
+                <input id="telefono" type="number" class="validate">
+                <label for="telefono">Telefono</label>
+              </div>
+              <div class="row center">
+                <a class="btn waves-effect waves-light purple btn " type="submit" onclick="guardardatos()">Registrarse</a>
+            </form>
+          </div>
+        </div>
+
+        <!-- Formulario de Inicio de Sesion -->
+        <div id="login">
+          <form>
+            <div class="input-field">
+              <i class="material-icons prefix purple-text">account_circle</i>
+              <input id="login_email" type="email" class="validate">
+              <label for="login_email">Email</label>
+            </div>
+            <div class="input-field">
+              <i class="material-icons prefix purple-text">lock</i>
+              <input id="login_password" type="password" class="validate">
+              <label for="login_password">Contraseña</label>
+            </div>
+            <div class="row center">
+            <a class="btn waves-effect waves-light purple btn" type="submit" href="pedidos.html">Iniciar Sesion</a>
+          </form>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  
+  <script>
+    //Activa el navbar en dispositivos pequeños
+ $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+
+    //Inicializa las pestañas
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.tabs');
+      var instances = M.Tabs.init(elems);
+    });
+
+     //Activa el boton registrarse
+    function guardardatos(params) {
+      alert("Sus datos fueron guardados")
+
+    }
+  </script>
+
+
+
+
+  
+
+
+
+
+
+  <script src="Js/materialize.min.js"></script>
+</body>
+
+</html>

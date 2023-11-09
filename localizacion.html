@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="Css/materialize.min.css">
+  <script src="Js/jquery-3.7.0.min.js"></script>
+  <title>Localizacion</title>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper card panel purple darken-3">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="registro.html">Registro</a></li>
+        <li><a href="pedidos.html">Pedidos</a></li>
+        <li><a href="localizacion.html">Localizacion</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="registro.html"><i class="material-icons purple-text">account_circle</i>Registro</a></li>
+    <li><a href="pedidos.html"><i class="material-icons purple-text">shopping_cart</i>Pedidos</a></li>
+    <li><a href="localizacion.html"><i class="material-icons purple-text">place</i>Localizacion</a></li>
+  </ul>
+
+
+  
+  <div class="center-align">
+
+    <h3 class="header center purple-text">Localizar Productos</h3>
+    <p>En esta seccion podra conocer la ruta y el tiempo de entrega de sus productos.
+      Si el usuario no se encuentra registrado en el sistema no podra acceder a esta funcion del software.</p>
+  </div>
+<!--Ejemplo como conocer la ruta de entrega-->
+  <div class="container" id="cardejemplo">
+    <div class="row section center-align">
+        <div class="col s12 m6 offset-m3">
+            <div class="card small">
+                <div class="card-image">
+                    <img src="Imagenes/Ejemplo3.jpg" width="200px" height="200px">
+                </div>
+                <div class='card-content'>
+                </div>
+                <div class='card-action'>
+                    <p>Conozca la ruta y el tiempo de entrega de los productos.</p>
+                </div>
+            </div>
+            <div class="row-center">
+              <a class="btn waves-effect waves-light purple btn " type="submit" onclick="mostrarRuta()">Consultar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  
+    <div class="container" id="ruta" style="display: none;">
+      <div class="row section center-align">
+          <div class="col s12 m6 offset-m3">
+              <div class="card small">
+                  <div class="card-image">
+                      <img src="Imagenes/Ejemplo2.jpg" width="200px" height="200px">
+                  </div>
+                  <div class='card-content'>
+                  </div>
+                  <div class='card-action'>
+                      <p>Ejemplo.Se mostrara el mapa con la ruta de entrega de los productos y el tiempo estimado de
+                        entrega.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+    <script>
+     
+     $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+
+      //Ejemplo de seguimento de la ruta
+      function mostrarRuta() {
+    // Oculta la carta con el ejemplo
+    document.getElementById("cardejemplo").style.display = "none";
+
+    // Muestra el ejemplo de la ruta
+    document.getElementById("ruta").style.display = "block";
+
+    //Oculta el boton de consulta
+    document.getElementById("botonconfirmar").style.display = "none";
+}
+    </script>
+
+    <script src="Js/materialize.min.js"></script>
+</body>
+
+</html>

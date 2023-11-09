@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="Css/materialize.min.css">
+    <script src="Js/jquery-3.7.0.min.js"></script>
+    <title>Registro de Pedidos</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper card panel purple darken-3">
+            <a href="#!" class="brand-logo">Logo</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+                <li><a href="localizacion.html">Localizacion</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="registro.html"><i class="material-icons purple-text">account_circle</i>Registro</a></li>
+        <li><a href="pedidos.html"><i class="material-icons purple-text">shopping_cart</i>Pedidos</a></li>
+        <li><a href="localizacion.html"><i class="material-icons purple-text">place</i>Localizacion</a></li>
+    </ul>
+
+    <!-- Contenedor de los productos -->
+    <div id="productos" class="row section">
+
+        <h2 class="header center purple-text"> Agregue Productos</h2>
+        <h6 class="center-align">En esta seccion usted puede agregar productos y generar un pedido</h6>
+        <div class="row section">
+            <div class="col s12">
+                <div id="carrito">
+                    <!-- Aquí se mostrarán los productos seleccionados -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row section">
+            <div class="col s4">
+                <div class="row">
+                    <div class="col s12 m5">
+                        <div class="card small">
+                            <div class="card-image">
+                                <img src="Imagenes/Ejemplo1.jpg" width="200px" height="200px">
+                                <span class="card-title">Productos</span>
+                            </div>
+                            <div class="card-content">
+                                <p>Lorem ipsum.</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="#"><i class="material-icons purple-text"
+                                        onclick="agregarProducto()">add</i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row section">
+            <div class="col s4">
+                <div class="row">
+                    <div class="col s12 m5">
+                        <div class="card small">
+                            <div class="card-image">
+                                <img src="Imagenes/Ejemplo1.jpg" width="200px" height="200px">
+                                <span class="card-title">Productos</span>
+                            </div>
+                            <div class="card-content">
+                                <p>Lorem ipsum.</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="#"><i class="material-icons purple-text"
+                                        onclick="agregarProducto()">add</i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row section">
+            <div class="col s4">
+                <div class="row">
+                    <div class="col s12 m5">
+                        <div class="card small">
+                            <div class="card-image">
+                                <img src="Imagenes/Ejemplo1.jpg" width="200px" height="200px">
+                                <span class="card-title">Productos</span>
+                            </div>
+                            <div class="card-content">
+                                <p>Lorem ipsum.</p>
+                            </div>
+                            <div class="card-action">
+                                <a href="#"><i class="material-icons purple-text"
+                                        onclick="agregarProducto()">add</i></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Contenedor del formulario oculto -->
+    <div id="formulario" class="input field" style="display: none;">
+
+        <h3 class="header center">Datos de Envio</h3>
+        <p class="center-align">Ingrese los siguientes datos para el envio de los productos:</p>
+        <div class="container">
+            <div class="card">
+                <div class="card-content">
+                    <div id="registro">
+                        <form>
+                            <div class="input-field">
+                                <i class="material-icons prefix purple-text">person</i>
+                                <input id="Nombres" type="text" class="validate">
+                                <label for="Nombres">Nombres</label>
+                            </div>
+
+                            <div class="input-field">
+                                <i class="material-icons prefix purple-text">person</i>
+                                <input id="Apellidos" type="text" class="validate">
+                                <label for="Apellidos">Apellidos</label>
+                            </div>
+
+                            <div class="input-field">
+                                <i class="material-icons prefix purple-text">mail</i>
+                                <input id="email_envio" type="email" class="validate">
+                                <label for="email_envio">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <i class="material-icons prefix purple-text">place</i>
+                                <input id="Direccion" type="text" class="validate">
+                                <label for="Direccion">Direccion</label>
+                            </div>
+                            <div class="row center">
+                                <a class="btn waves-effect waves-light purple btn " type="submit"
+                                  href="localizacion.html"  onclick="guardarpedido()">Confirmar</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Botón de confirmar -->
+    <div class="row center" id="botonconfirmar">
+        <h6>Al confirmar la compra se generara un formulario para los datos de envio</h6><br><br>
+        <a class="waves-effect waves-light purple btn" onclick="mostrarFormulario()">Confirmar</a>
+    </div>
+
+
+
+    <script src="Js/pedidos.js"></script>
+
+    <script src="Js/materialize.min.js"></script>
+</body>
+
+</html>
